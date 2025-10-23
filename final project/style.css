@@ -2,12 +2,9 @@
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     margin: 0;
+    min-height: 100vh;
+    display: block; /* important so navbar stays at top */
 }
 
 /* ===== Headings ===== */
@@ -28,7 +25,7 @@ h1 {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 420px;
-    margin-bottom: 2rem;
+    margin: 100px auto 2rem; /* push down to clear fixed navbar */
 }
 
 /* ===== Inputs & Labels ===== */
@@ -103,47 +100,55 @@ label a {
         text-decoration: underline;
     }
 
-/* ===== Menu Buttons ===== */
-.btn {
-    display: inline-block;
-    background: #1976d2;
-    color: #fff;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.1s;
-    width: 200px;
-    margin: 0.4rem 0;
-    text-align: center;
+/* ===== Navbar ===== */
+.navbar {
+    display: flex;
+    justify-content: flex-start; /* horizontal layout */
+    align-items: center; /* vertically center buttons */
+    background-color: #1976d2;
+    padding: 0.5rem 1rem;
+    gap: 1rem; /* space between buttons */
+    flex-wrap: nowrap; /* keep buttons side by side */
+    width: 100%;
+    position: fixed; /* stick to top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-x: auto; /* horizontal scroll if needed */
+    box-sizing: border-box;
 }
 
-    .btn:hover {
-        background: #1565c0;
-        transform: scale(1.03);
+    .navbar .btn {
+        background-color: #fff;
+        color: #1976d2;
+        border-radius: 0.5rem;
+        padding: 0.6rem 1.5rem;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background 0.3s, transform 0.1s;
+        white-space: nowrap; /* prevent text wrap */
+        display: inline-block;
     }
 
-/* Make sure the anchor around buttons looks normal */
-a {
-    text-decoration: none;
-}
+        .navbar .btn:hover {
+            background-color: #e3f2fd;
+            transform: scale(1.05);
+        }
 
-/* ===== Menu Container (optional, if you wrap it) ===== */
-.menu-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem;
-}
+    .navbar a {
+        text-decoration: none;
+        display: inline-block; /* ensures spacing works */
+    }
 
 /* ===== Responsive Design ===== */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .form-container {
-        padding: 1.5rem;
+        width: 90%;
+        margin-top: 120px; /* push down to clear navbar */
     }
 
-    .btn {
-        width: 100%;
+    .navbar {
+        overflow-x: auto; /* horizontal scroll instead of wrapping */
     }
 }

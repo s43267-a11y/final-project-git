@@ -11,31 +11,29 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        string menu = "<div class='navbar'>";
 
-        string menu = "<div class='menu-container'>";
-        
-        menu += "<a href='Default.aspx'><input class='btn' type='button' value=' דף הבית ' /></a><br />";
+        menu += "<button class='btn' onclick=\"location.href='Default.aspx'\">דף הבית</button>";
 
         if (Session["id"] == null)
         {
-            menu += "<a href='Loging.aspx'><input class='btn' type='button' value=' כניסה ' /></a><br />";
-            menu += "<a href='Registration.aspx'><input class='btn' type='button' value=' הרשמה ' /></a><br />";
+            menu += "<button class='btn' onclick=\"location.href='Loging.aspx'\">כניסה</button>";
+            menu += "<button class='btn' onclick=\"location.href='Registration.aspx'\">הרשמה</button>";
         }
         else
         {
-            menu += "<a href='Home.aspx'><input class='btn' type='button' value=' דף המשתמש ' /></a><br />";
-            menu += "<a href='update.aspx'><input class='btn' type='button' value=' עדכון ' /></a><br />";
+            menu += "<button class='btn' onclick=\"location.href='Home.aspx'\">דף המשתמש</button>";
+            menu += "<button class='btn' onclick=\"location.href='update.aspx'\">עדכון</button>";
         }
+
         if (Session["mgr"] != null && (bool)Session["mgr"])
         {
-            menu += "<a href='admin.aspx'><input class='btn' type='button' value='ניהול אדמין' /></a><br />";
+            menu += "<button class='btn' onclick=\"location.href='admin.aspx'\">ניהול אדמין</button>";
         }
 
-
-
-        menu += "</div>"; // close the wrapper
-
+        menu += "</div>";
         menuLiteral.Text = menu;
+
 
     }
 
