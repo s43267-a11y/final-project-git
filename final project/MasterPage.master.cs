@@ -26,10 +26,11 @@ public partial class MasterPage : System.Web.UI.MasterPage
             menu += "<a href='Home.aspx'><input class='btn' type='button' value=' דף המשתמש ' /></a><br />";
             menu += "<a href='update.aspx'><input class='btn' type='button' value=' עדכון ' /></a><br />";
         }
-        if (Session["mgr"] != null && (bool)Session["mgr"] == true)
+        if (Session["mgr"] != null && (bool)Session["mgr"])
         {
-            menu += "<a herf ='admin.aspx'><input class='btn' type='button' value='דף אדמין/></a><br/>";
+            menu += "<a href='admin.aspx'><input class='btn' type='button' value='ניהול אדמין' /></a><br />";
         }
+
 
 
         menu += "</div>"; // close the wrapper
