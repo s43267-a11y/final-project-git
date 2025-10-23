@@ -13,7 +13,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
 
         string menu = "<div class='menu-container'>";
-
+        menu += "<a href='test.aspx'><input class='btn' type='button' value=' test ' /></a><br />";
         menu += "<a href='Default.aspx'><input class='btn' type='button' value=' דף הבית ' /></a><br />";
 
         if (Session["id"] == null)
