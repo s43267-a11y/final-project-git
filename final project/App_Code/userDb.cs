@@ -65,4 +65,51 @@ public class userDb
 
         return str;
     }
+
+    public static string GetUserTable()
+    {
+        DataTable dt = DAL.GetTable("select * from tavla1");
+        string str = "<table border='1'>";
+
+        // שורת כותרות
+        str += "<thead><tr>";
+        str += "<th>userName</th>";
+        str += "<th>passWord</th>";
+        str += "<th>privateName</th>";
+        str += "<th>lastName</th>";
+        str += "<th>email</th>";
+        str += "<th>addres</th>";
+        str += "<th>phoneNumber</th>";
+        str += "<th>gender</th>";
+        str += "<th>birthDate</th>";
+        str += "<th>phoneCode</th>";
+        str += "<th>city2</th>";
+        str += "</tr></thead>";
+
+        // שורות הנתונים
+        str += "<tbody>";
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            str += "<tr>";
+            str += "<td>" + dt.Rows[i]["userName"].ToString() + "</td>";
+            str += "<td>" + dt.Rows[i]["passWord"].ToString() + "</td>";
+            str += "<td>" + dt.Rows[i]["privateName"].ToString() + "</td>";
+            str += "<td>" + dt.Rows[i]["lastName"].ToString() + "</td>";
+            str += "<td>" + dt.Rows[i]["email"].ToString() + "</td>";
+            str += "<td>" + dt.Rows[i]["addres"].ToString() + "</td>";
+            str += "<td>" + dt.Rows[i]["phoneNumber"].ToString() + "</td>";
+            str += "<td>" + dt.Rows[i]["gender"].ToString() + "</td>";
+            str += "<td>" + dt.Rows[i]["birthDate"].ToString() + "</td>";
+            str += "<td>" + dt.Rows[i]["phoneCode"].ToString() + "</td>";
+            str += "<td>" + dt.Rows[i]["city2"].ToString() + "</td>";
+            str += "</tr>";
+        }
+        str += "</tbody>";
+
+        str += "</table>";
+
+        return str;
+    }
+
+
 }
