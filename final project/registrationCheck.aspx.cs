@@ -34,16 +34,17 @@ public partial class registration_check : System.Web.UI.Page
         string gender = (genderInt == 1) ? "Female" : "Male";
 
 
-       
+
         // insert info into to sql string
 
-        string strSql = "INSERT INTO tavla1 ([userName], [passWord], [privateName], [lastName], [email], [addres], [phoneNumber], [gender], [birthDate], [phoneCode], [city2]) " +
-            "VALUES ('" + uname.Replace("'", "''") + "', '" + pass.Replace("'", "''") + "', '" + fname.Replace("'", "''") + "', '" +
-            lname.Replace("'", "''") + "', '" + email.Replace("'", "''") + "', '" + addres.Replace("'", "''") + "', '" + phone + "', '" +
-            gender + "', #" + formattedDate + "#, '" + phonecode + "', '" + ctiy + "')";
+        string strSql = "INSERT INTO tavla1 ([userName], [passWord], [privateName], [lastName], [email], [addres], [phoneNumber], [gender], [birthDate], [phoneCode], [city2], [admin]) " +
+        "VALUES ('" + uname.Replace("'", "''") + "', '" + pass.Replace("'", "''") + "', '" + fname.Replace("'", "''") + "', '" +
+        lname.Replace("'", "''") + "', '" + email.Replace("'", "''") + "', '" + addres.Replace("'", "''") + "', '" + phone + "', '" +
+        gender + "', #" + formattedDate + "#, '" + phonecode + "', '" + ctiy + "', 0)";
 
 
-       
+
+
 
         if (userDb.getUserId(uname) > 0)
         {
@@ -59,6 +60,7 @@ public partial class registration_check : System.Web.UI.Page
         {
             Session["name"] = fname;
             Session["id"] = userDb.getUserId(uname);
+            Session["mgr"] = false;
             Response.Redirect("home.aspx");
         }
         else

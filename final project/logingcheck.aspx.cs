@@ -27,7 +27,7 @@ public partial class logingcheck : System.Web.UI.Page
           string password = Request.Form["passwordTxt"];
 
         //   check if into exist ---> trun ito an sql string
-        string strSql = "SELECT id ,privateName FROM tavla1 WHERE (userName ='" + name + "') AND (passWord = '" + password + "')";
+        string strSql = "SELECT id ,privateName,admin FROM tavla1 WHERE (userName ='" + name + "') AND (passWord = '" + password + "')";
      
 
             OleDbConnection con = DAL.GetConnection();
@@ -38,6 +38,8 @@ public partial class logingcheck : System.Web.UI.Page
             {
                 Session["name"] = rdr.GetString(1);
                 Session["id"] = (int)rdr.GetValue(0);
+                Session["mgr"] = (bool)rdr.GetBoolean(2);
+            
 
                 Response.Redirect("home.aspx");
 
