@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\test.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|c:\\users\\user\\source\\repos\\final project\\final project\\app_code\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\app_code\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\app_code\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -169,9 +169,8 @@
               "ToolTip": "C:\\Users\\user\\source\\repos\\final project\\final project\\App_Code\\DAL.cs",
               "RelativeToolTip": "final project\\App_Code\\DAL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T07:54:07.185Z",
-              "EditorCaption": ""
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADSSURBVDhPYxj6gBFKg8G3b9/\u002BQ5kEARcXF1gvE5gHBDDNUw9PZnCaYgfHC0/NB8uD2Mg0TD3cBSABkOa1F1czSPBJMLhreDJ8\u002BfmFQUVUhaFzTztUFQLsyzkEdwUYgAyw6DL57zLR4f\u002Br96/\u002Bg/jIGCSHTIMwSB/cCzCgIqLKwMPOA\u002BVBALrzYTQIYBhw581tsNORAci52GgQQAmDovX5DBeenkcJAxA7WD8UqgoBYP5HMQCkoW5bNdgQGMi2zQUbgBJgSABFEBYw2AAuA0YBAwMA5VV85HBAmM0AAAAASUVORK5CYII=",
+              "WhenOpened": "2025-06-03T07:54:07.185Z"
             },
             {
               "$type": "Document",
@@ -193,6 +192,7 @@
               "RelativeDocumentMoniker": "final project\\MasterPage.master",
               "ToolTip": "C:\\Users\\user\\source\\repos\\final project\\final project\\MasterPage.master",
               "RelativeToolTip": "final project\\MasterPage.master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2025-09-02T07:36:21.983Z",
               "EditorCaption": ""
