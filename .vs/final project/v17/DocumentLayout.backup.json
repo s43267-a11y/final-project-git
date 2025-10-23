@@ -3,11 +3,71 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\final-project-git\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\User\\source\\repos\\final-project-git\\final project|c:\\users\\user\\source\\repos\\final-project-git\\final project\\app_code\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\User\\source\\repos\\final-project-git\\final project|solutionrelative:final project\\app_code\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\User\\source\\repos\\final-project-git\\final project\\app_code\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+=======
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|c:\\users\\user\\source\\repos\\final project\\final project\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\masterpage.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\masterpage.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\masterpage.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\masterpage.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\logingcheck.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\logingcheck.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\registration.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\registration.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\home.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\home.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\loging.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\loging.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\registrationcheck.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\registrationcheck.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\update.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\update.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\updatecheck.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\updatecheck.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\updatecheck.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\updatecheck.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|C:\\Users\\user\\source\\repos\\final project\\final project\\app_code\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+>>>>>>> 2b86b1ae7151ed455dca3e19bed66ee525c2c2eb
       "RelativeMoniker": "D:0:0:{9050E16D-DCB4-43BD-B12F-38E73000AC8E}|C:\\Users\\user\\source\\repos\\final project\\final project|solutionrelative:final project\\app_code\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -106,7 +166,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -149,6 +209,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
               "Title": "DAL.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\final-project-git\\final project\\App_Code\\DAL.cs",
@@ -183,10 +244,71 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-22T16:08:09.905Z"
+=======
+              "DocumentIndex": 1,
+              "Title": "MasterPage.master.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\final project\\final project\\MasterPage.master.cs",
+              "RelativeDocumentMoniker": "final project\\MasterPage.master.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\final project\\final project\\MasterPage.master.cs",
+              "RelativeToolTip": "final project\\MasterPage.master.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T07:52:12.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\final project\\final project\\style.css",
+              "RelativeDocumentMoniker": "final project\\style.css",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\final project\\final project\\style.css",
+              "RelativeToolTip": "final project\\style.css",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAIUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-22T07:42:46.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MasterPage.master",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\final project\\final project\\MasterPage.master",
+              "RelativeDocumentMoniker": "final project\\MasterPage.master",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\final project\\final project\\MasterPage.master",
+              "RelativeToolTip": "final project\\MasterPage.master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-09-02T07:36:21.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "home.aspx",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\final project\\final project\\home.aspx",
+              "RelativeDocumentMoniker": "final project\\home.aspx",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\final project\\final project\\home.aspx",
+              "RelativeToolTip": "final project\\home.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-07T17:41:04.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "logingcheck.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\final project\\final project\\logingcheck.aspx.cs",
+              "RelativeDocumentMoniker": "final project\\logingcheck.aspx.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\final project\\final project\\logingcheck.aspx.cs",
+              "RelativeToolTip": "final project\\logingcheck.aspx.cs",
+              "ViewState": "AgIAABMAAABAxelnX2UkwBwAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T08:19:29.394Z"
+>>>>>>> 2b86b1ae7151ed455dca3e19bed66ee525c2c2eb
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+<<<<<<< HEAD
               "Title": "updateCheck.aspx.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\final-project-git\\final project\\updateCheck.aspx.cs",
               "RelativeDocumentMoniker": "final project\\updateCheck.aspx.cs",
@@ -207,6 +329,16 @@
               "ViewState": "AgIAAEIAAAAAAAAAAAAAAEUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-10-22T07:42:46.105Z"
+=======
+              "Title": "Registration.aspx",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\final project\\final project\\Registration.aspx",
+              "RelativeDocumentMoniker": "final project\\Registration.aspx",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\final project\\final project\\Registration.aspx",
+              "RelativeToolTip": "final project\\Registration.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-09-08T05:52:52.08Z"
+>>>>>>> 2b86b1ae7151ed455dca3e19bed66ee525c2c2eb
             },
             {
               "$type": "Bookmark",
