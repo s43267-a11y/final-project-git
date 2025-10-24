@@ -69,6 +69,9 @@ public class userDb
     public static string GetUserTable()
     {
         DataTable dt = DAL.GetTable("select * from tavla1");
+        DataTable citydt = DAL.GetTable("select * from arim1");
+        DataTable kidometdt = DAL.GetTable("select * from kidometTelphone");
+
         string str = "<table border='1'>";
 
         // שורת כותרות
@@ -86,29 +89,49 @@ public class userDb
         str += "<th>city2</th>";
         str += "</tr></thead>";
 
-        // שורות הנתונים
         str += "<tbody>";
+
         for (int i = 0; i < dt.Rows.Count; i++)
         {
             str += "<tr>";
-            str += "<td>" + dt.Rows[i]["userName"].ToString() + "</td>";
-            str += "<td>" + dt.Rows[i]["passWord"].ToString() + "</td>";
-            str += "<td>" + dt.Rows[i]["privateName"].ToString() + "</td>";
-            str += "<td>" + dt.Rows[i]["lastName"].ToString() + "</td>";
-            str += "<td>" + dt.Rows[i]["email"].ToString() + "</td>";
-            str += "<td>" + dt.Rows[i]["addres"].ToString() + "</td>";
-            str += "<td>" + dt.Rows[i]["phoneNumber"].ToString() + "</td>";
-            str += "<td>" + dt.Rows[i]["gender"].ToString() + "</td>";
-            str += "<td>" + dt.Rows[i]["birthDate"].ToString() + "</td>";
-            str += "<td>" + dt.Rows[i]["phoneCode"].ToString() + "</td>";
-            str += "<td>" + dt.Rows[i]["city2"].ToString() + "</td>";
+
+            str += "<td>" + dt.Rows[i]["userName"] + "</td>";
+            str += "<td>" + dt.Rows[i]["passWord"] + "</td>";
+            str += "<td>" + dt.Rows[i]["privateName"] + "</td>";
+            str += "<td>" + dt.Rows[i]["lastName"] + "</td>";
+            str += "<td>" + dt.Rows[i]["email"] + "</td>";
+            str += "<td>" + dt.Rows[i]["addres"] + "</td>";
+            str += "<td>" + dt.Rows[i]["phoneNumber"] + "</td>";
+            str += "<td>" + dt.Rows[i]["gender"] + "</td>";
+            str += "<td>" + dt.Rows[i]["birthDate"] + "</td>";
+
+            // 🔹 חיפוש קידומת לפי מזהה
+            string kidometPhone = "";
+            if (dt.Rows[i]["phoneCode"] != DBNull.Value)
+            {
+                DataRow[] rows_2 = kidometdt.Select("id = " + dt.Rows[i]["phoneCode"]);
+                if (rows_2.Length > 0)
+                    kidometPhone = rows_2[0]["phoneCode"].ToString();
+            }
+            str += "<td>" + kidometPhone + "</td>";
+
+            // 🔹 חיפוש שם העיר לפי מזהה
+            string cityName = "";
+            if (dt.Rows[i]["city2"] != DBNull.Value)
+            {
+                DataRow[] rows = citydt.Select("id = " + dt.Rows[i]["city2"]);
+                if (rows.Length > 0)
+                    cityName = rows[0]["city"].ToString();
+            }
+            str += "<td>" + cityName + "</td>";
+
             str += "</tr>";
         }
-        str += "</tbody>";
 
-        str += "</table>";
+        str += "</tbody></table>";
 
         return str;
+
     }
 
 
