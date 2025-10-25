@@ -74,8 +74,9 @@ public class userDb
 
         string str = "<table border='1'>";
 
-        // שורת כותרות
+        // table headers
         str += "<thead><tr>";
+        str += "<th>id</th>";
         str += "<th>userName</th>";
         str += "<th>passWord</th>";
         str += "<th>privateName</th>";
@@ -87,6 +88,7 @@ public class userDb
         str += "<th>birthDate</th>";
         str += "<th>phoneCode</th>";
         str += "<th>city2</th>";
+        str += "<th>מחק</th>"; // delete column
         str += "</tr></thead>";
 
         str += "<tbody>";
@@ -95,6 +97,7 @@ public class userDb
         {
             str += "<tr>";
 
+            str += "<td>" + dt.Rows[i]["id"] + "</td>";
             str += "<td>" + dt.Rows[i]["userName"] + "</td>";
             str += "<td>" + dt.Rows[i]["passWord"] + "</td>";
             str += "<td>" + dt.Rows[i]["privateName"] + "</td>";
@@ -105,7 +108,7 @@ public class userDb
             str += "<td>" + dt.Rows[i]["gender"] + "</td>";
             str += "<td>" + dt.Rows[i]["birthDate"] + "</td>";
 
-            // 🔹 חיפוש קידומת לפי מזהה
+            // 🔹 get phone prefix
             string kidometPhone = "";
             if (dt.Rows[i]["phoneCode"] != DBNull.Value)
             {
@@ -115,7 +118,7 @@ public class userDb
             }
             str += "<td>" + kidometPhone + "</td>";
 
-            // 🔹 חיפוש שם העיר לפי מזהה
+            // 🔹 get city name
             string cityName = "";
             if (dt.Rows[i]["city2"] != DBNull.Value)
             {
@@ -124,6 +127,9 @@ public class userDb
                     cityName = rows[0]["city"].ToString();
             }
             str += "<td>" + cityName + "</td>";
+
+            // 🔹 delete link by id
+            str += "<td><a href='delete.aspx?id=" + dt.Rows[i]["id"] + "' onclick=\"return confirm('האם אתה בטוח שברצונך למחוק משתמש זה?');\">מחק</a></td>";
 
             str += "</tr>";
         }

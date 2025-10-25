@@ -24,6 +24,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             menu += "<button class='btn' onclick=\"location.href='Home.aspx'\">דף המשתמש</button>";
             menu += "<button class='btn' onclick=\"location.href='update.aspx'\">עדכון</button>";
+            menu += "<button class='btn'  onclick=\"location.href='logout.aspx'\">התנתק</button>";
         }
 
         if (Session["mgr"] != null && (bool)Session["mgr"])
