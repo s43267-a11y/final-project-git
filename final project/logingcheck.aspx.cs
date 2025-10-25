@@ -41,7 +41,7 @@ public partial class logingcheck : System.Web.UI.Page
                     Session["mgr"] = (bool)rdr.GetBoolean(2);
             
 
-                    Response.Redirect("home.aspx");
+                    Response.Redirect("user.aspx");
 
                 }
                 else

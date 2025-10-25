@@ -18,7 +18,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
 
         // Home
-        menu += "<button class='btn' title='בית' onclick=\"location.href='Default.aspx'\"><i class='fa-solid fa-house'></i><span>בית</span></button>";
+        menu += "<button class='btn' title='בית' onclick=\"location.href='home.aspx'\"><i class='fa-solid fa-house'></i><span>בית</span></button>";
 
         if (Session["id"] == null)
         {
@@ -27,7 +27,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
         }
         else
         {
-            menu += "<button class='btn' title='דף המשתמש' onclick=\"location.href='Home.aspx'\"><i class='fa-solid fa-user'></i><span>משתמש</span></button>";
+            menu += "<button class='btn' title='דף המשתמש' onclick=\"location.href='user.aspx'\"><i class='fa-solid fa-user'></i><span>משתמש</span></button>";
             menu += "<button class='btn' title='עדכון' onclick=\"location.href='update.aspx'\"><i class='fa-solid fa-pen-to-square'></i><span>עדכון</span></button>";
             menu += "<button class='btn' title='התנתק' onclick=\"location.href='logout.aspx'\"><i class='fa-solid fa-right-from-bracket'></i><span>התנתק</span></button>";
         }
