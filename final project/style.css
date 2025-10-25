@@ -50,7 +50,7 @@ h1 {
     text-align: center;
     font-size: 1.8rem;
     color: #1976d2;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem; /* increased spacing for form titles */
     letter-spacing: 0.5px;
     text-transform: capitalize;
 }
@@ -96,7 +96,7 @@ select {
         outline: none;
     }
 
-/* ===== Radio Buttons ===== */
+/* ===== Radio Buttons & Checkboxes ===== */
 .radio-group {
     margin-bottom: 1rem;
 }
@@ -104,6 +104,25 @@ select {
     .radio-group label {
         margin-right: 1rem;
         font-weight: normal;
+    }
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 0.3rem;
+    transform: scale(1.1);
+}
+
+/* ===== Row layout for phone/city fields ===== */
+.row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+    .row select,
+    .row input {
+        flex: 1;
     }
 
 /* ===== Submit Buttons ===== */

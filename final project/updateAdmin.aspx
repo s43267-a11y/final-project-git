@@ -1,16 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="update.aspx.cs" Inherits="update" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="updateAdmin.aspx.cs" Inherits="updateAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 
-        
 
-    <h1> this is the update page :</h1>
+
        
-     <form action ="updateCheck.aspx" method="post " class="form-container"> 
+     <form action ="updateAdminCheck.aspx" method="post" class="form-container" > 
 
     <label>username :</label> <input name="userName_3" id="userName_3" type="text" value ="<%=row["userName"] %> " /> <br /> 
       <label>password :</label> <input name="passWord_3" type="text" value ="<%=row["passWord"] %>"/><br />
@@ -24,6 +22,9 @@
      <input name="Gender_2" type="radio" value="0" <% =s0 %> /> male 
        <input name="Gender_2" type="radio" value="1" <%= s1 %> /> female <br />
 
+         <label> is andmin:</label>
+         <input name ="admin" type="checkbox" <%=s3 %> /><br />
+
      <label> phone number : </label>  <select name ="phone_select_2"> <%=userDb.GetPhoneOptions_2((int)row["phoneCode"]) %> </select> 
      <input name="phoneNumber_2" type="text" value ="<%=row["phoneNumber"] %>"/><br />
  
@@ -32,6 +33,5 @@
     <input name="Submit_upd" action="submit3" type="submit" value="update"/>
  </form>
   
-
 </asp:Content>
 

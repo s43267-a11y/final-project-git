@@ -12,7 +12,7 @@ public partial class Default2 : System.Web.UI.Page
         // optional: only allow admin to delete
         if (Session["mgr"] == null || (bool)Session["mgr"] == false)
         {
-            Response.Redirect("manager.aspx?err=אין הרשאה לביצוע מחיקה");
+            Response.Redirect("admin.aspx?err=אין הרשאה לביצוע מחיקה");
             return;
         }
 

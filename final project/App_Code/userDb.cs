@@ -89,6 +89,7 @@ public class userDb
         str += "<th>phoneCode</th>";
         str += "<th>city2</th>";
         str += "<th>מחק</th>"; // delete column
+        str += "<th>עדכון</th>";
         str += "</tr></thead>";
 
         str += "<tbody>";
@@ -130,6 +131,7 @@ public class userDb
 
             // 🔹 delete link by id
             str += "<td><a href='delete.aspx?id=" + dt.Rows[i]["id"] + "' onclick=\"return confirm('האם אתה בטוח שברצונך למחוק משתמש זה?');\">מחק</a></td>";
+            str += "<td><a href='updateAdmin.aspx?id=" + dt.Rows[i]["id"] + "' onclick=\"return confirm('האם אתה בטוח שברצונך לעדכן משתמש זה?');\">עדכן</a></td>";
 
             str += "</tr>";
         }
