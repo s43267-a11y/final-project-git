@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
        <link  rel ="stylesheet" href="style.css"/>
-      <script src="https://kit.fontawesome.com/080b66dd49.js" crossorigin="anonymous"></script>
+     
 </asp:Content>
 
 
