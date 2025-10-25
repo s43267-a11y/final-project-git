@@ -196,11 +196,12 @@ label a {
         margin: 6rem 1rem 2rem;
     }
 }
+
+/* ===== Recipe Showcase ===== */
 .recipe-showcase {
     display: inline-block;
     width: 320px;
-    height: 520px; /* same height for all cards */
-    border: 2px solid black;
+    height: 520px;
     border-radius: 20px;
     padding: 20px;
     margin: 15px;
@@ -208,17 +209,18 @@ label a {
     vertical-align: top;
     text-align: left;
     box-sizing: border-box;
-    overflow: hidden; /* prevents content overflow */
+    overflow: hidden;
 }
 
 .photo-recipe {
     display: block;
     width: 100%;
-    height: 200px; /* equal image height */
-    object-fit: cover; /* keeps image proportion */
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
 }
+
 .recipe-showcase h3 {
     font-size: 16px;
     text-transform: lowercase;
@@ -228,4 +230,53 @@ label a {
 .recipe-showcase p {
     font-size: 14px;
     line-height: 1.4;
+}
+
+/* ===== Table Action Buttons (Delete / Update) ===== */
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.1s;
+}
+
+    .action-btn i {
+        font-size: 1rem;
+    }
+
+    /* Delete button style */
+    .action-btn.delete-btn {
+        background-color: #e53935;
+    }
+
+        .action-btn.delete-btn:hover {
+            background-color: #b71c1c;
+            transform: scale(1.1);
+        }
+
+    /* Update button style */
+    .action-btn.update-btn {
+        background-color: #1976d2;
+    }
+
+        .action-btn.update-btn:hover {
+            background-color: #1565c0;
+            transform: scale(1.1);
+        }
+
+/* Responsive smaller buttons */
+@media (max-width: 600px) {
+    .action-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+        .action-btn i {
+            font-size: 0.9rem;
+        }
 }

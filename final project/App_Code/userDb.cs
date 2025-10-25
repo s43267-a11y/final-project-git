@@ -129,10 +129,14 @@ public class userDb
             }
             str += "<td>" + cityName + "</td>";
 
-            // 🔹 delete link by id
-            str += "<td><a href='delete.aspx?id=" + dt.Rows[i]["id"] + "' onclick=\"return confirm('האם אתה בטוח שברצונך למחוק משתמש זה?');\">מחק</a></td>";
-            str += "<td><a href='updateAdmin.aspx?id=" + dt.Rows[i]["id"] + "' onclick=\"return confirm('האם אתה בטוח שברצונך לעדכן משתמש זה?');\">עדכן</a></td>";
+            // 🔹 delete & update links as icons
+            str += "<td><a href='delete.aspx?id=" + dt.Rows[i]["id"] + "' " +
+                   "onclick=\"return confirm('האם אתה בטוח שברצונך למחוק משתמש זה?');\" " +
+                   "class='action-btn delete-btn' title='מחק'><i class='fa-solid fa-trash'></i></a></td>";
 
+            str += "<td><a href='updateAdmin.aspx?id=" + dt.Rows[i]["id"] + "' " +
+                   "onclick=\"return confirm('האם אתה בטוח שברצונך לעדכן משתמש זה?');\" " +
+                   "class='action-btn update-btn' title='עדכן'><i class='fa-solid fa-pen-to-square'></i></a></td>";
             str += "</tr>";
         }
 

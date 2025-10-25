@@ -2,9 +2,16 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
        <link  rel ="stylesheet" href="style.css"/>
+      <script src="https://kit.fontawesome.com/080b66dd49.js" crossorigin="anonymous"></script>
 </asp:Content>
+
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h1> this is the home page</h1>
+
+
+
 <div class="recipe-continer">
  <div class="recipe-showcase">
    <img  class="photo-recipe" src="images/istockphoto-1413553779-612x612.jpg" />

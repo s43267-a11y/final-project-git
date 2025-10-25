@@ -7,14 +7,14 @@
 
    <title>this is my web site</title>
     <link rel="stylesheet" href="style.css">
-
+     <script src="https://kit.fontawesome.com/080b66dd49.js" crossorigin="anonymous"></script>
    <asp:ContentPlaceHolder id="head" runat="server">
    </asp:ContentPlaceHolder>
 
 </head>
 
 <body>
-   
+    
      <asp:Literal ID="menuLiteral" runat="server"></asp:Literal>
 
 
