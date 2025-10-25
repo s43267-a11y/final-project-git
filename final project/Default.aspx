@@ -11,9 +11,9 @@
     <h1> this is the home page</h1>
 
 
-
-<div class="recipe-continer">
- <div class="recipe-showcase">
+    
+ <div >
+  <div class="recipe-showcase">
    <img  class="photo-recipe" src="images/istockphoto-1413553779-612x612.jpg" />
     <h4>the perfect chicken alfredo pasta:</h4>
     <p>Perfect for a weeknight dinner or a special occasion, this dish comes together in under 40 minutes with simple ingredients and minimal prep. Whether you're cooking for family or entertaining guests, Chicken Alfredo Pasta is a guaranteed ...</p>
@@ -37,9 +37,53 @@
 
 </div>
 
-
-
+       
 </div>
-    
+
+
+
+
+
+
+
+
+    <script>
+        const recipeContainer = document.getElementById('recipeContainer');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+
+        const cardWidth = 320;
+        const cardMargin = 20; // 10 left + 10 right margin
+        const scrollAmount = cardWidth + cardMargin;
+        const visibleCards = 3;
+        const totalCards = recipeContainer.children.length;
+
+        let currentIndex = 0;
+
+        function updateButtons() {
+            prevBtn.disabled = currentIndex <= 0;
+            nextBtn.disabled = currentIndex >= totalCards - visibleCards;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < totalCards - visibleCards) {
+                currentIndex++;
+                recipeContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                updateButtons();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                recipeContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                updateButtons();
+            }
+        });
+
+        updateButtons();
+    </script>
+
+
 </asp:Content>
 

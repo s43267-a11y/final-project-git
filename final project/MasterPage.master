@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
-
+ 
 <html>
 <head runat="server">
 
@@ -15,11 +15,31 @@
 
 <body>
     
-     <asp:Literal ID="menuLiteral" runat="server"></asp:Literal>
+<!-- Sidebar Toggle Button -->
+<button class="toggle-btn" onclick="toggleSidebar()">
+  <i class="fas fa-bars"></i>
+</button>
+
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+  <div id="menuContainer" runat="server">
+    <asp:Literal ID="menuLiteral" runat="server"></asp:Literal>
+  </div>
+</nav>
 
 
 
-   
+    <div class="overlay" onclick="toggleSidebar()"></div>
+
+
+
+<script>
+    function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("open");
+
+        
+    }
+</script>
         
 
   <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
