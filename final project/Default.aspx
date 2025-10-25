@@ -11,36 +11,17 @@
     <h1> this is the home page</h1>
 
 
-    
- <div >
-  <div class="recipe-showcase">
-   <img  class="photo-recipe" src="images/istockphoto-1413553779-612x612.jpg" />
-    <h4>the perfect chicken alfredo pasta:</h4>
-    <p>Perfect for a weeknight dinner or a special occasion, this dish comes together in under 40 minutes with simple ingredients and minimal prep. Whether you're cooking for family or entertaining guests, Chicken Alfredo Pasta is a guaranteed ...</p>
-     <h5> if you want to kep reading then click here <a href="loging.aspx">login</a></h5>
+<div class="carousel-wrapper">
+    <button class="prev-btn">&#8592;</button>
+    <div class="scroll-container">
+        <div class="recipe-showcase">1</div>
+        <div class="recipe-showcase">2</div>
+        <div class="recipe-showcase">3</div>
+        <div class="recipe-showcase">4</div>
+        <div class="recipe-showcase">5</div>
+    </div>
+    <button class="next-btn">&#8594;</button>
 </div>
-
-
-     <div class="recipe-showcase">
-     <img  class="photo-recipe" src="images/Lasagna-PNG-Background.png" />
-    <h4>the perfect chicken alfredo pasta:</h4>
-    <p>Perfect for a weeknight dinner or a special occasion, this dish comes together in under 40 minutes with simple ingredients and minimal prep. Whether you're cooking for family or entertaining guests, Chicken Alfredo Pasta is a guaranteed ...</p>
-         <h5> if you want to kep reading then click here <a href="loging.aspx">login</a></h5>
-</div>
-
-
-     <div class="recipe-showcase">
-   <img  class="photo-recipe" src="images/Untitled.jpeg" />
-    <h4>the perfect chicken alfredo pasta:</h4>
-    <p>Perfect for a weeknight dinner or a special occasion, this dish comes together in under 40 minutes with simple ingredients and minimal prep. Whether you're cooking for family or entertaining guests, Chicken Alfredo Pasta is a guaranteed ...</p>
-    <h5> if you want to kep reading then click here <a href="loging.aspx">login</a></h5>
-
-</div>
-
-       
-</div>
-
-
 
 
 
@@ -48,40 +29,27 @@
 
 
     <script>
-        const recipeContainer = document.getElementById('recipeContainer');
-        const nextBtn = document.getElementById('nextBtn');
-        const prevBtn = document.getElementById('prevBtn');
+        const container = document.querySelector('.scroll-container');
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
 
-        const cardWidth = 320;
-        const cardMargin = 20; // 10 left + 10 right margin
-        const scrollAmount = cardWidth + cardMargin;
-        const visibleCards = 3;
-        const totalCards = recipeContainer.children.length;
-
-        let currentIndex = 0;
-
-        function updateButtons() {
-            prevBtn.disabled = currentIndex <= 0;
-            nextBtn.disabled = currentIndex >= totalCards - visibleCards;
-        }
+        const cardWidth = 320 + 15; // card width + gap
+        let scrollPosition = 0;
 
         nextBtn.addEventListener('click', () => {
-            if (currentIndex < totalCards - visibleCards) {
-                currentIndex++;
-                recipeContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                updateButtons();
+            if (scrollPosition < container.scrollWidth - container.clientWidth) {
+                scrollPosition += cardWidth;
+                container.scrollTo({ left: scrollPosition, behavior: 'smooth' });
             }
         });
 
         prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                recipeContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                updateButtons();
+            if (scrollPosition > 0) {
+                scrollPosition -= cardWidth;
+                container.scrollTo({ left: scrollPosition, behavior: 'smooth' });
             }
         });
 
-        updateButtons();
     </script>
 
 
