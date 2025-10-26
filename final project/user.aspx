@@ -5,9 +5,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
    
-    <h1> this is the users page</h1>
-   
+<h1>My Favorite Recipes</h1>
 
+<div class="favorites-container">
+    <asp:Repeater ID="Repeater1" runat="server">
+        <ItemTemplate>
+            <a href='recipes.aspx?id=<%# Eval("ID") %>' class="favorite-link">
+                <div class="favorite-card">
+                    <img src='images/<%# Eval("img") %>' alt='<%# Eval("heading") %>' />
+                    <h3><%# Eval("heading") %></h3>
+                    <p><%# Eval("description").ToString().Length > 80 ? Eval("description").ToString().Substring(0, 80) + "..." : Eval("description") %></p>
+                </div>
+            </a>
+        </ItemTemplate>
+    </asp:Repeater>
+</div>
 
     
       
