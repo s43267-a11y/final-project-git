@@ -35,7 +35,7 @@
          <% if (Session["id"] != null) { %>
         <form method="post" action="AddToFavorites.aspx">
         <input type="hidden" name="recipeId" value="<%= row_3["id"] %>" />
-        <button type="submit" class="fav-btn">❤️ Add to Favorites</button>
+        <button type="submit" class="fav-btn">❤️ Add to Favorites</button>`
         </form>
          <% } else { %>
         <p><a href="loging.aspx">Login</a> to add this recipe to your favorites.</p>
