@@ -28,8 +28,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
         else
         {
             menu += "<button class='btn' title='דף המשתמש' onclick=\"location.href='user.aspx'\"><i class='fa-solid fa-user'></i><span>משתמש</span></button>";
-            menu += "<button class='btn' title='עדכון' onclick=\"location.href='update.aspx'\"><i class='fa-solid fa-pen-to-square'></i><span>עדכון</span></button>";
-            menu += "<button class='btn' title='התנתק' onclick=\"location.href='logout.aspx'\"><i class='fa-solid fa-right-from-bracket'></i><span>התנתק</span></button>";
+            menu += "<button class='btn updateLink' title='עדכון' onclick=\"location.href='update.aspx'\"><i class='fa-solid fa-pen-to-square'></i><span>עדכון</span></button>";
+            menu += "<button class='btn logoutLink' title='התנתק' onclick=\"location.href='logout.aspx'\"><i class='fa-solid fa-right-from-bracket'></i><span>התנתק</span></button>";
         }
 
         if (Session["mgr"] != null && (bool)Session["mgr"])

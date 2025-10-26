@@ -10,7 +10,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 
-    <h1> this is the home page</h1>
+    <h1>this is the home page</h1>
 
  
     
