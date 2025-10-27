@@ -1,482 +1,476 @@
-﻿    *{
-        margin:0 ;
-        padding:0;
-        box-sizing:border-box;
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --primary-light: #60a5fa;
+    --accent: #f59e0b;
+    --accent-dark: #d97706;
+    --success: #10b981;
+    --danger: #ef4444;
+    --neutral-50: #f9fafb;
+    --neutral-100: #f3f4f6;
+    --neutral-200: #e5e7eb;
+    --neutral-300: #d1d5db;
+    --neutral-600: #4b5563;
+    --neutral-700: #374151;
+    --neutral-800: #1f2937;
+    --neutral-900: #111827;
+    --spacing: 8px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}
 
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+    background-attachment: fixed;
+    color: var(--neutral-800);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: filter 0.3s ease;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    height: 100vh;
+    width: 280px;
+    background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: calc(var(--spacing) * 3) calc(var(--spacing) * 2);
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+}
+
+    .sidebar.open {
+        right: 0;
     }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 900;
+    backdrop-filter: blur(2px);
+}
 
-    /* ===== General Page Styling ===== */
-    body {
-        font-family: "Segoe UI", Arial, sans-serif;
-        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-        margin: 0;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        box-sizing: border-box;
-        transition: filter 0.3s ease;
+.sidebar.open ~ .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.toggle-btn {
+    position: fixed;
+    top: calc(var(--spacing) * 2);
+    right: calc(var(--spacing) * 2);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border: none;
+    color: #fff;
+    font-size: 1.25rem;
+    border-radius: var(--radius-md);
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2.5);
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    z-index: 1100;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+    .toggle-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
     }
 
-    /* ===== Sidebar Navigation (Slide-in from Right) ===== */
-    .sidebar {
-        position: fixed;
-        top: 0;
-        right: -220px; /* Hidden by default */
-        height: 100vh;
-        width: 220px;
-        background-color: #1976d2;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding-top: 1rem;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
-        transition: right 0.4s ease;
-        z-index: 1000;
+    .toggle-btn:active {
+        transform: translateY(0);
     }
 
-        /* Sidebar visible when opened */
-        .sidebar.open {
-            right: 0;
-        }
+.nav-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 1.5);
+    margin-top: calc(var(--spacing) * 6);
+}
 
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.3);
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease;
-        z-index: 900;
+.btn.logoutLink {
+    position: fixed;
+    bottom: calc(var(--spacing) * 8);
+    margin: 0;
+}
+
+.btn.updateLink {
+    position: fixed;
+    bottom: calc(var(--spacing) * 2);
+    margin: 0;
+}
+
+.sidebar .btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: calc(var(--spacing) * 2);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md);
+    color: #fff;
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+}
+
+    .sidebar .btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(-4px);
+        border-color: rgba(255, 255, 255, 0.3);
     }
 
-    .sidebar.open ~ .overlay {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    /* Toggle button (always visible in top-right corner) */
-    .toggle-btn {
-        position: fixed;
-        width:90px;
-        top: 15px;
-        right: 15px;
-        background: #1976d2;
-        border: none;
-        color: #fff;
-        font-size: 1.5rem;
-        border-radius: 16px;
-        padding: 0.6rem 0.8rem;
-        cursor: pointer;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        z-index: 1100;
-        transition: background 0.3s, transform 0.1s;
-    }
-
-        .toggle-btn:hover {
-            background: #1565c0;
-            transform: scale(1.05);
-        }
-
-    /* Buttons inside sidebar */
-    .nav-links {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 4rem;
-    }
-
-    .btn.logoutLink {
-        position: fixed;
-        bottom: 0;
-        margin-bottom: 45px;
-        text-align: left;
-    }
-    .btn.updateLink{
-        position:fixed;
-        bottom:0;
-        text-align:left;
-    }
-
-
-
-    .sidebar .btn {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 1rem;
-        background: none;
-        border: none;
-        border-radius: 40px;
-        color: #fff;
-        text-align: left;
-        padding: 0.8rem 1.2rem;
-        width: 200px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background 0.3s, transform 0.1s;
-    }
-
-        .sidebar .btn:hover {
-            background-color: #1565c0;
-            transform: translateX(-5px);
-        }
-
-        .sidebar .btn i {
-            font-size: 1.2rem;
-            width: 24px;
-            text-align: center;
-        }
-
-    /* Hide text when sidebar is closed */
-    .sidebar:not(.open) .btn span {
-        display: none;
-    }
-
-
-
-    /* Dim content when sidebar is open */
-    .sidebar.open ~ .main-content {
-        filter: brightness(0.8);
-    }
-
-    /* When sidebar collapses (if you implement collapse smaller width) */
-    .sidebar.collapsed ~ .main-content {
-        margin-right: 70px; /* smaller sidebar width */
-    }
-
-    /* Responsive Sidebar */
-    @media (max-width: 768px) {
-        .sidebar {
-            width:400px;
-            right: -200px; /* hidden off screen */
-        }
-
-            .sidebar.open {
-                right: 0;
-            }
-
-        .toggle-btn {
-            right: 10px;
-            top: 10px;
-        }
-
-        .main-content {
-            margin-right: 200px;
-        }
-
-        .sidebar.collapsed ~ .main-content {
-            margin-right: 70px;
-        }
-    }
-
-    /* ===== Headings ===== */
-    h1 {
+    .sidebar .btn i {
+        font-size: 1.25rem;
+        width: 24px;
         text-align: center;
-        font-size: 1.8rem;
-        color: #1976d2;
-        margin-bottom: 2rem;
-        letter-spacing: 0.5px;
-        text-transform: capitalize;
     }
 
-    /* ===== Form Containers ===== */
-    .form-container {
+.sidebar:not(.open) .btn span {
+    display: none;
+}
+
+h1 {
+    text-align: center; 
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: calc(var(--spacing) * 8) 0 calc(var(--spacing) * 4);
+    letter-spacing: -0.5px;
+}
+
+.form-container {
+    background: #fff;
+    padding: calc(var(--spacing) * 4);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 480px;
+    margin: calc(var(--spacing) * 4) auto;
+    border: 1px solid var(--neutral-100);
+}
+
+label {
+    display: block;
+    margin-bottom: calc(var(--spacing) * 1);
+    color: var(--neutral-700);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: calc(var(--spacing) * 1.5);
+    margin-bottom: calc(var(--spacing) * 2);
+    border: 2px solid var(--neutral-200);
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-family: inherit;
+    background: var(--neutral-50);
+}
+
+    input:focus,
+    select:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        outline: none;
         background: #fff;
-        padding: 2rem 2.5rem;
-        border-radius: 1rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 420px;
-        margin: 2rem auto;
-        text-align: left;
     }
 
-    /* ===== Inputs & Labels ===== */
-    label {
-        display: block;
-        margin-bottom: 0.3rem;
-        color: #333;
+.radio-group {
+    margin-bottom: calc(var(--spacing) * 2);
+}
+
+    .radio-group label {
+        display: inline-block;
+        margin-right: calc(var(--spacing) * 2);
         font-weight: 500;
     }
 
-    input[type="text"],
-    input[type="password"],
-    input[type="email"],
-    input[type="date"],
-    select {
-        width: 100%;
-        padding: 0.7rem;
-        margin-bottom: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 0.5rem;
-        transition: border-color 0.3s, box-shadow 0.3s;
-        font-size: 1rem;
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: calc(var(--spacing) * 1);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+    gap: calc(var(--spacing) * 2);
+    align-items: center;
+    margin-bottom: calc(var(--spacing) * 2);
+}
+
+    .row select,
+    .row input {
+        flex: 1;
     }
 
-        input:focus,
-        select:focus {
-            border-color: #1976d2;
-            box-shadow: 0 0 5px rgba(25, 118, 210, 0.4);
-            outline: none;
-        }
+input[type="submit"] {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    border: none;
+    padding: calc(var(--spacing) * 2);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-md);
+}
 
-    /* ===== Radio Buttons & Checkboxes ===== */
-    .radio-group {
-        margin-bottom: 1rem;
+    input[type="submit"]:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
     }
 
-        .radio-group label {
-            margin-right: 1rem;
-            font-weight: normal;
-        }
-
-    input[type="radio"],
-    input[type="checkbox"] {
-        margin-right: 0.3rem;
-        transform: scale(1.1);
+    input[type="submit"]:active {
+        transform: translateY(0);
     }
 
-    /* ===== Row layout for phone/city fields ===== */
-    .row {
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-        margin-bottom: 1rem;
+label a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+    label a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
     }
 
-        .row select,
-        .row input {
-            flex: 1;
-        }
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--spacing) * 2);
+    padding: calc(var(--spacing) * 4) 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
-    /* ===== Submit Buttons ===== */
-    input[type="submit"] {
-        background-color: #1976d2;
-        color: #fff;
-        border: none;
-        padding: 0.8rem 1.2rem;
-        border-radius: 0.5rem;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background 0.3s, transform 0.1s;
-        width: 100%;
-    }
+.scroll-container {
+    display: flex;
+    gap: calc(var(--spacing) * 3);
+    overflow: hidden;
+    width: calc(3 * 360px + 2 * 24px);
+    scroll-behavior: smooth;
+    padding: calc(var(--spacing) * 2) 0;
+}
 
-        input[type="submit"]:hover {
-            background-color: #1565c0;
-            transform: scale(1.02);
-        }
-
-    /* ===== Links ===== */
-    label a {
-        display: inline-block;
-        margin-top: 0.5rem;
-        color: #1976d2;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s;
-    }
-
-        label a:hover {
-            color: #0d47a1;
-            text-decoration: underline;
-        }
-
-    /* ===== Standalone Buttons ===== */
-    .btn {
-        display: inline-block;
-        background: #1976d2;
-        color: #fff;
-        border: none;
-        border-radius: 0.5rem;
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background 0.3s, transform 0.1s;
-        text-align: center;
-    }
-
-        .btn:hover {
-            background: #1565c0;
-            transform: scale(1.03);
-        }
-
-    /* ===== Recipe Showcase ===== */
-
-    .scroll-container {
-        display: flex;
-        gap: 15px;
-        overflow: hidden; /* hide extra items */
-        width: calc(3 * 320px + 2 * 15px); /* exactly 3 cards visible */
-        margin: auto; /* center horizontally */
-        scroll-behavior: smooth;
-    }
-
-    /* Hide scrollbar for Chrome, Safari, Opera */
     .scroll-container::-webkit-scrollbar {
         display: none;
     }
 
-    .carousel-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+.prev-btn,
+.next-btn {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    border: none;
+    padding: calc(var(--spacing) * 2);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .prev-btn:hover,
+    .next-btn:hover {
+        transform: scale(1.1);
+        box-shadow: var(--shadow-lg);
     }
 
-    .prev-btn,
-    .next-btn {
-        background-color: #1976d2;
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 0.3rem;
-        cursor: pointer;
+    .prev-btn:active,
+    .next-btn:active {
+        transform: scale(1);
     }
 
-        .prev-btn:hover,
-        .next-btn:hover {
-            background-color: #1565c0;
+.recipe-showcase {
+    flex: 0 0 360px;
+    height: auto;
+    min-height: 520px;
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-lg);
+    padding: calc(var(--spacing) * 3);
+    background: #fff;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+    .recipe-showcase:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--primary-light);
+    }
+
+.photo-recipe {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: calc(var(--spacing) * 2);
+    transition: transform 0.3s ease;
+}
+
+.recipe-showcase:hover .photo-recipe {
+    transform: scale(1.05);
+}
+
+.recipe-showcase h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--neutral-900);
+    margin-bottom: calc(var(--spacing) * 1.5);
+    line-height: 1.3;
+    text-transform: capitalize;
+}
+
+.recipe-showcase p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--neutral-600);
+    margin-bottom: calc(var(--spacing) * 2);
+    flex-grow: 1;
+}
+
+.recipe-showcase h5 {
+    margin-top: auto;
+}
+
+    .recipe-showcase h5 a {
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .recipe-showcase h5 a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
         }
 
+.user-table {
+    width: 100%;
+    max-width: 1400px;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: calc(var(--spacing) * 4) auto;
+    background-color: #fff;
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--neutral-200);
+}
 
-    /* Individual recipe cards */
-    .recipe-showcase {
-        flex: 0 0 320px; /* fixed width so only 3 fit in container */
-        height: 520px;
-        border: solid black;
-        border-radius: 20px;
-        padding: 20px;
-        background-color: white;
-        box-sizing: border-box;
+    .user-table thead {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: #fff;
     }
 
-    .photo-recipe {
-        display: block;
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 15px;
+    .user-table th,
+    .user-table td {
+        padding: calc(var(--spacing) * 2);
+        border-bottom: 1px solid var(--neutral-200);
+        font-size: 0.95rem;
+        text-align: left;
     }
 
-    .recipe-showcase h3 {
-        font-size: 16px;
-        text-transform: lowercase;
-        margin-bottom: 10px;
+    .user-table th {
+        font-weight: 600;
+        letter-spacing: 0.5px;
     }
 
-    .recipe-showcase p {
-        font-size: 14px;
-        line-height: 1.4;
+    .user-table tbody tr {
+        transition: background 0.2s ease;
     }
-
-    /* ===== User Table Styling ===== */
-    .user-table {
-        width: 100%;
-        max-width: 1200px;
-        border-collapse: collapse;
-        margin: 2rem auto;
-        font-family: "Segoe UI", Arial, sans-serif;
-        background-color: #fff;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-        .user-table thead {
-            background-color: #1976d2;
-            color: #fff;
-            text-align: left;
-        }
-
-        .user-table th,
-        .user-table td {
-            padding: 0.8rem 1rem;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 0.95rem;
-        }
 
         .user-table tbody tr:hover {
-            background-color: #f1f7ff;
-            transition: background 0.2s;
+            background-color: var(--neutral-50);
         }
 
-        .user-table th {
-            font-weight: 600;
+        .user-table tbody tr:last-child td {
+            border-bottom: none;
         }
 
-        .user-table td a.action-btn {
-            display: inline-block;
-            background-color: #1976d2;
-            color: #fff;
-            padding: 0.3rem 0.6rem;
-            border-radius: 0.3rem;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: background 0.3s, transform 0.1s;
-        }
-
-            .user-table td a.action-btn:hover {
-                background-color: #1565c0;
-                transform: scale(1.05);
-            }
-
-    /* ===== Responsive Design ===== */
-    @media (max-width: 600px) {
-        .form-container {
-            padding: 1.5rem;
-            margin: 6rem 1rem 2rem;
-        }
-
-        /* Make table responsive */
-        .user-table thead {
-            display: none;
-        }
-
-        .user-table,
-        .user-table tbody,
-        .user-table tr,
-        .user-table td {
-            display: block;
-            width: 100%;
-        }
-
-            .user-table tr {
-                margin-bottom: 1rem;
-                border-bottom: 2px solid #e0e0e0;
-            }
-
-            .user-table td {
-                text-align: right;
-                padding-left: 50%;
-                position: relative;
-            }
-
-                .user-table td::before {
-                    content: attr(data-label);
-                    position: absolute;
-                    left: 0;
-                    width: 45%;
-                    padding-left: 1rem;
-                    font-weight: 600;
-                    text-align: left;
-                }
+    .user-table td a.action-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary);
+        color: #fff;
+        padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1.5);
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        font-size: 1rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: var(--shadow-sm);
     }
-/* ====== RECIPE DETAIL PAGE ====== */
+
+        .user-table td a.action-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
 
 .recipe-page {
-    background-color: #e3f2fd; /* same tone as homepage */
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+    background-attachment: fixed;
     min-height: 100vh;
-    padding: 2rem 0;
+    padding: calc(var(--spacing) * 4) 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -484,112 +478,121 @@
 
 .recipe-container {
     background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
     max-width: 900px;
     width: 90%;
-    margin: 0 auto;
-    padding: 2rem 3rem;
-    color: #333;
-    line-height: 1.7;
+    margin: calc(var(--spacing) * 4) auto;
+    padding: calc(var(--spacing) * 5);
+    color: var(--neutral-800);
+    line-height: 1.8;
+    border: 1px solid var(--neutral-200);
 }
 
     .recipe-container h1 {
         text-align: center;
-        color: #1976d2;
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-        text-transform: capitalize;
+        font-size: 2.5rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: calc(var(--spacing) * 3);
     }
 
 .recipe-image {
     display: block;
     width: 100%;
-    max-height: 400px;
+    max-height: 450px;
     object-fit: cover;
-    border-radius: 12px;
-    margin: 1.5rem 0 2rem 0;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-lg);
+    margin: calc(var(--spacing) * 3) 0;
+    box-shadow: var(--shadow-lg);
 }
 
 .recipe-description,
 .recipe-ingredients,
 .recipe-steps {
-    margin-bottom: 2rem;
+    margin-bottom: calc(var(--spacing) * 4);
 }
 
     .recipe-description h3,
     .recipe-ingredients h3,
     .recipe-steps h3 {
-        color: #1976d2;
-        border-bottom: 2px solid #bbdefb;
-        padding-bottom: 0.3rem;
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
+        color: var(--primary);
+        border-bottom: 3px solid var(--primary-light);
+        padding-bottom: calc(var(--spacing) * 1);
+        margin-bottom: calc(var(--spacing) * 2);
+        font-size: 1.5rem;
+        font-weight: 700;
     }
 
     .recipe-ingredients ul,
     .recipe-steps ol {
-        margin-left: 1.5rem;
+        margin-left: calc(var(--spacing) * 3);
     }
 
         .recipe-ingredients ul li,
         .recipe-steps ol li {
-            margin-bottom: 0.5rem;
+            margin-bottom: calc(var(--spacing) * 1.5);
+            line-height: 1.8;
         }
 
 .back-btn {
-    display: inline-block;
-    margin-top: 2rem;
-    background-color: #1976d2;
+    display: inline-flex;
+    align-items: center;
+    gap: calc(var(--spacing) * 1);
+    margin-top: calc(var(--spacing) * 3);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
     text-decoration: none;
-    padding: 0.7rem 1.2rem;
-    border-radius: 8px;
-    transition: background 0.3s, transform 0.1s;
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-md);
 }
 
     .back-btn:hover {
-        background-color: #1565c0;
-        transform: scale(1.03);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
     }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .recipe-container {
-        padding: 1.5rem;
+    .back-btn:active {
+        transform: translateY(0);
     }
 
-        .recipe-container h1 {
-            font-size: 1.6rem;
-        }
-}
 .fav-btn {
-    background-color: #ff4081;
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
     border: none;
     color: white;
     font-size: 1rem;
-    padding: 10px 15px;
-    border-radius: 8px;
+    font-weight: 600;
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3);
+    border-radius: var(--radius-sm);
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-md);
+    margin: calc(var(--spacing) * 2) 0;
 }
 
     .fav-btn:hover {
-        background-color: #f50057;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
     }
 
-
-
-
-/* ==== FAVORITES CARDS (match homepage style but smaller) ==== */
+    .fav-btn:active {
+        transform: translateY(0);
+    }
 
 .favorites-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-    padding: 20px;
+    gap: calc(var(--spacing) * 4);
+    padding: calc(var(--spacing) * 4);
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .favorite-link {
@@ -598,38 +601,123 @@
 }
 
 .favorite-card {
-    width: 260px;
+    width: 300px;
     background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--neutral-200);
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     cursor: pointer;
 }
 
     .favorite-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--primary-light);
     }
 
     .favorite-card img {
         width: 100%;
-        height: 160px;
+        height: 180px;
         object-fit: cover;
-        border-radius: 16px 16px 0 0;
     }
 
     .favorite-card h3 {
-        font-size: 1.1rem;
-        color: #1976d2;
-        margin: 10px 0;
-        font-weight: 600;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--neutral-900);
+        margin: calc(var(--spacing) * 2) calc(var(--spacing) * 2) calc(var(--spacing) * 1);
     }
 
     .favorite-card p {
-        font-size: 0.9rem;
-        color: #555;
-        padding: 0 10px 15px;
-        line-height: 1.4;
+        font-size: 0.95rem;
+        color: var(--neutral-600);
+        padding: 0 calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+        line-height: 1.6;
     }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .form-container {
+        padding: calc(var(--spacing) * 3);
+        margin: calc(var(--spacing) * 8) calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+    }
+
+    .scroll-container {
+        width: 100%;
+        overflow-x: auto;
+        padding: calc(var(--spacing) * 2);
+    }
+
+    .recipe-showcase {
+        flex: 0 0 300px;
+    }
+
+    .recipe-container {
+        padding: calc(var(--spacing) * 3);
+        width: 95%;
+    }
+
+        .recipe-container h1 {
+            font-size: 1.75rem;
+        }
+
+    .user-table thead {
+        display: none;
+    }
+
+    .user-table,
+    .user-table tbody,
+    .user-table tr,
+    .user-table td {
+        display: block;
+        width: 100%;
+    }
+
+        .user-table tr {
+            margin-bottom: calc(var(--spacing) * 2);
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .user-table td {
+            text-align: right;
+            padding-left: 50%;
+            position: relative;
+        }
+
+            .user-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 45%;
+                padding-left: calc(var(--spacing) * 2);
+                font-weight: 600;
+                text-align: left;
+                color: var(--neutral-700);
+            }
+
+    .sidebar {
+        width: 280px;
+        right: -280px;
+    }
+
+    .toggle-btn {
+        right: calc(var(--spacing) * 2);
+        top: calc(var(--spacing) * 2);
+        padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
+    }
+}
+
+@media (max-width: 480px) {
+    .favorite-card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
