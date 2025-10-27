@@ -70,6 +70,8 @@ public class DAL
         OleDbConnection con = GetConnection();
         OleDbCommand cmd = GetCommand(con, strSql);
 
+        System.Diagnostics.Debug.WriteLine(strSql);
+
         OleDbDataAdapter dataAdapter = new OleDbDataAdapter(strSql, con);
         dataAdapter.Fill(dt);
         return dt;
