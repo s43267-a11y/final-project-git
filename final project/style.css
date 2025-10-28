@@ -164,7 +164,7 @@ body {
 }
 
 h1 {
-    text-align: center; 
+    text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
