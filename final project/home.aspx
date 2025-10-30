@@ -42,8 +42,30 @@
            <h5> for more click  <a href="recipes.aspx?id=3">here</a></h5>
         </div>
 
-        <div class="recipe-showcase">4</div>
-        <div class="recipe-showcase">5</div>
+   <div class="recipe-showcase">
+  <img class="photo-recipe" src="images/garlickpasta.jpg" />
+  <h3>Creamy Garlic Parmesan Pasta</h3>
+  <p>
+    This creamy garlic parmesan pasta is rich, comforting, and ready in under 30 minutes. 
+    Tender pasta is coated in a silky sauce made with butter, cream, garlic, and Parmesan cheese. 
+    Simple to make yet full of flavor — perfect for a cozy dinner.
+  </p>
+  <h5>for more click <a href="recipes.aspx?id=4">here</a></h5>
+</div>
+
+
+
+        <div class="recipe-showcase">
+  <img class="photo-recipe" src="images/cookie.jpg" />
+  <h3>Soft Chocolate Chip Cookies</h3>
+  <p>
+    These homemade chocolate chip cookies are soft, chewy, and loaded with chocolate chips. 
+    Crisp at the edges and tender in the center, they’re the perfect sweet treat for any occasion. 
+    Serve warm with a glass of milk for the ultimate comfort.
+  </p>
+  <h5>for more click <a href="recipes.aspx?id=5">here</a></h5>
+</div>
+
     </div>
     <button class="next-btn">&#8594;</button>
 </div>
