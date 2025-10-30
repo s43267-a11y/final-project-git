@@ -10,7 +10,8 @@
         <input placeholder ="username"  name ="usernameTxt" type="text" >
         <input  placeholder = "password" name= "passwordTxt" type = "password" >
         <input action="Submit1" type ="submit" value ="submit" />
+        <label> this is a label for = <a href ="Registration.aspx">  Registration</a></label>
     </form> 
-     <label> this is a label for = <a href ="Registration.aspx">  Registration</a></label>
+   
 </asp:Content>
 
