@@ -17,12 +17,7 @@ public partial class home : System.Web.UI.Page
             {
                 string userId = Session["id"].ToString();
                 string sql = @"
-                SELECT Table1.*
-                FROM Table1
-                INNER JOIN Favorites
-                ON Table1.ID = Favorites.recipeID
-                WHERE Favorites.userID = " + userId;
-
+               SELECT DISTINCT Table1.* FROM Table1 INNER JOIN Favorites ON Table1.ID = Favorites.recipeID WHERE Favorites.userID = " + userId;
                 DataTable dt = DAL.GetTable(sql);
                 Repeater1.DataSource = dt;
                 Repeater1.DataBind();

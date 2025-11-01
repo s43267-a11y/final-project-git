@@ -9,14 +9,34 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to <span class="gradient-text">RecipeWorld</span></h1>
+    <p>Discover, cook, and share your favorite recipes — all in one place.</p>
+    <a href="#carousel-wrapper-id" class="hero-btn">Explore Recipes</a>
+  </div>
+</section>
 
-    <h1>this is the home page</h1>
 
- 
+<!-- SEARCH BAR SECTION -->
+<section class="search-section">
+    <h2 class="search-title">Find Your Favorite Recipe</h2>
+    <div class="search-wrapper">
+        <input
+            type="text"
+            id="recipeSearch"
+            placeholder="Search recipes..."
+            onkeyup="filterRecipes()"
+        />
+        <button type="button" class="search-btn">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+</section>
     
 
 
-<div class="carousel-wrapper">
+<div class="carousel-wrapper" id="carousel-wrapper-id">
     <button class="prev-btn">&#8592;</button>
     <div class="scroll-container">
 
@@ -55,7 +75,7 @@
 
 
 
-        <div class="recipe-showcase">
+ <div class="recipe-showcase">
   <img class="photo-recipe" src="images/cookie.jpg" />
   <h3>Soft Chocolate Chip Cookies</h3>
   <p>
@@ -69,6 +89,23 @@
     </div>
     <button class="next-btn">&#8594;</button>
 </div>
+
+
+     <!-- ABOUT SECTION -->
+        <section class="about-section">
+            <div class="about-content">
+                <h2>About RecipeWorld</h2>
+                <p>
+                    At RecipeWorld, we believe that cooking should be simple, joyful, and shared with others.
+                    Our platform connects food lovers from around the world — from beginners to seasoned chefs.
+                </p>
+                <p>
+                    Explore thousands of recipes, save your favorites, and inspire others by sharing your own creations.
+                    Whether it’s a family dinner or a new dessert experiment, RecipeWorld is here to make it easy and fun.
+                </p>
+
+            </div>
+        </section>
 
 
 
@@ -96,6 +133,45 @@
                 container.scrollTo({ left: scrollPosition, behavior: 'smooth' });
             }
         });
+
+
+        function filterRecipes() {
+            const searchInput = document.getElementById("recipeSearch").value.toLowerCase();
+            const recipes = document.querySelectorAll(".recipe-showcase");
+
+            recipes.forEach((recipe) => {
+                const title = recipe.querySelector("h3").textContent.toLowerCase();
+                const desc = recipe.querySelector("p").textContent.toLowerCase();
+                if (title.includes(searchInput) || desc.includes(searchInput)) {
+                    recipe.style.display = "flex";
+                } else {
+                    recipe.style.display = "none";
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const heroBtn = document.querySelector(".hero-btn");
+
+            if (heroBtn) {
+                heroBtn.addEventListener("click", (event) => {
+                    event.preventDefault(); // stop instant jump
+
+                    const target = document.querySelector(heroBtn.getAttribute("href"));
+                    if (target) {
+                        const offset = 60; // adjust for navbar height if needed
+                        const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            }
+        });
+
+       
 
     </script>
 

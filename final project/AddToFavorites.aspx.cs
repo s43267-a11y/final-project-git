@@ -21,10 +21,16 @@ public partial class AddToFavorites : System.Web.UI.Page
 
         if (!string.IsNullOrEmpty(recipeId))
         {
-            string sql = $"INSERT INTO Favorites (userId, recipeId) VALUES ({userId}, {recipeId})";
-            DAL.ExecuteNonQuery(sql); // Use your data access helper class here
+            string checkSql = $"SELECT COUNT(*) FROM Favorites WHERE userId = {userId} AND recipeId = {recipeId}";
+            int exists = Convert.ToInt32(DAL.ExecuteScalar(checkSql));
+
+            if (exists == 0)
+            {
+                string sql = $"INSERT INTO Favorites (userId, recipeId) VALUES ({userId}, {recipeId})";
+                DAL.ExecuteNonQuery(sql);
+            }
         }
 
-        Response.Redirect("user.aspx"); // Redirect to user favorites page
+        Response.Redirect("user.aspx");
     }
 }

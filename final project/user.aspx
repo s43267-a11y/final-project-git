@@ -13,7 +13,7 @@
             <a href='recipes.aspx?id=<%# Eval("ID") %>' class="favorite-link">
                 <div class="favorite-card">
                     <img src='images/<%# Eval("img") %>' alt='<%# Eval("heading") %>' />
-                    <h3><%# Eval("heading") %></h3>
+                    <h2><%# Eval("heading") %></h2>
                     <p><%# Eval("description").ToString().Length > 80 ? Eval("description").ToString().Substring(0, 80) + "..." : Eval("description") %></p>
                 </div>
             </a>
